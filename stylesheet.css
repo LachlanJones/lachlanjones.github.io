@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css?family=Manjari:400,700|Unica+One&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Manjari', sans-serif;
+    font-size: 20px;
+}
+
+h1,
+h2 {
+    margin: 0;
+    font-family: 'Unica One', cursive;
+    text-align: center;
+    font-size: 50px;
+}
+
+.pageContent {
+    /* centers all content and adds 'padding' to either side */
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+
+.pushedContent {
+    /* used to push any body content to a narrower, easily read width */
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+.banner {
+    /* class used to style header and footer */
+    height: 10vw;
+    background-color: #ff801f;
+}
+
+.banner img {
+    position: absolute;
+    right: 2.5vw;
+    height: 12vw;
+    top: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.banner h1 {
+    padding: 2.5vw;
+    vertical-align: middle;
+    color: #ffffff;
+    font-size: 4vw;
+    text-align: left;
+}
+
+#header {
+    /* specific header css, fixes to top of page */
+    top: 0;
+    margin-bottom: 2vw;
+}
+
+#footer {
+    /* specific footer css, fixes to bottom of page. Text align used to center p elements */
+    bottom: 0;
+    height: auto;
+    text-align: center;
+}
+
+#footer p {
+    display: inline-block;
+    width: 33%;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.alignCenter {
+    /* Class used with divs to center elements. Note child elements have to be displayed as inline-block */
+    text-align: center;
+}
+
+.stepDiv {
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    line-height: 40px;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.75s;
+}
+
+.stepDiv h2 {
+    padding: 0.75vw 0;
+    font-size: 30px;
+    background-color: #e36404;
+    color: #ffffff;
+}
+
+.displayedDiv {
+    /* Div used to hide/show the current booking page */
+    height: 100%;
+    opacity: 1.0;
+    display: block;
+    margin: 5vh auto;
+    padding: 25px;
+}
+
+.vehicleCard {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 25vw;
+}
+
+.vehicleCard img {
+    width: 25vw;
+}
+
+.vehicleCard h2 {
+    background-color: #e36404;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 20vw;
+    text-align: center;
+    opacity: 0.0;
+    transition: 0.2s;
+    font-size: 30px;
+}
+
+.vehicleCard h2:hover {
+    opacity: 0.9;
+}
+
+#vehicleOutput,
+#outputDiv {
+    text-align: center;
+}
+
+#vehicleOutput table,
+#outputDiv table {
+    display: inline-block;
+    text-align: left;
+}
+
+#vehicleOutput table td,
+#outputDiv table td {
+    width: 300px;
+    /* border: 1px solid red; */
+}
+
+.errorMessageDiv {
+    color: #ff5555;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.checkLabel {
+    /* Customize the label (the container) */
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkLabel input {
+    /* Hide the browser's default checkbox */
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    /* Create a custom checkbox */
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 25px;
+    width: 25px;
+    background-color: #eeeeee;
+}
+
+.checkLabel:hover input~.checkmark {
+    /* On mouse-over, add a grey background color */
+    background-color: #cccccc;
+}
+
+.checkLabel input:checked~.checkmark {
+    /* When the checkbox is checked, add a blue background */
+    background-color: #e36404;
+}
+
+.checkmark:after {
+    /* Create the checkmark/indicator (hidden when not checked) */
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkLabel input:checked~.checkmark:after {
+    /* Show the checkmark when checked */
+    display: block;
+}
+
+.checkLabel .checkmark:after {
+    /* Style the checkmark/indicator */
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+input[type="date"]::-webkit-clear-button {
+    /* Removes the clear button from date inputs */
+    display: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+    /* Removes the spin button */
+    display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    /* Always display the drop down caret */
+    color: #e36404;
+    cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    /* Always display the drop down caret */
+    color: #a34903;
+    background-color: #cccccc;
+}
+
+input[type="date"] {
+    /* A few custom styles for date inputs */
+    appearance: none;
+    -webkit-appearance: none;
+    color: #eeeeee;
+    font-size: 20px;
+    border: 1px solid #ffffff;
+    background: #eeeeee;
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+input[type="date"],
+focus {
+    color: #e36404;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    outline: none;
+}
+
+input {
+    margin-bottom: 15px;
+    font-family: 'Manjari', sans-serif;
+    padding: 15px;
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    background-color: #eeeeee;
+    color: #e36404;
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+input:hover {
+    cursor: text;
+}
+
+input:hover {
+    background-color: #cccccc;
+}
+
+button {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px 32px;
+    background-color: #e36404;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 23px;
+    cursor: pointer;
+    font-family: 'Unica One', cursive;
+    outline: none;
+}
+
+button:hover {
+    background-color: #a34903;
+}
+
+#submitButton {
+    background-color: #eeeeee;
+    color: #1EE81C;
+    border: 2px solid #1EE81C;
+    margin-top: 15px;
+}
+
+#submitButton:hover {
+    background-color: #cccccc;
+}
+
+#submitButton:disabled {
+    color: #ff0000;
+    border: 2px solid #ff0000;
+}
+
+#confirmOverlay {
+    position: fixed;
+    overflow: hidden;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ff801f;
+    opacity: 0.95;
+    transition: 0.2s;
+    width: 100vw;
+    height: 0;
+    /* height adjusted to expand overlay */
+}
+
+#confirmOverlay p {
+    line-height: 100vh;
+    font-size: 40px;
+    opacity: 1.0;
+    color: #ffffff;
+}
+
+#confirmOverlay a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 45px;
+    font-size: 90px;
+}
+
+#confirmOverlay a:hover {
+    color: #cccccc;
+}
+
+@media only screen and (max-width: 600px) {
+    .pushedContent {
+        width: 100%;
+        /* changed width value */
+    }
+    #footer p {
+        font-size: 15px;
+    }
+    .vehicleCard {
+        width: 60vw;
+        /* changed width value */
+    }
+    .vehicleCard img {
+        width: 60vw;
+        /* changed width value */
+    }
+    .vehicleCard h2 {
+        line-height: 48vw;
+    }
+    .banner {
+        height: 20vw;
+        /* changed height value */
+    }
+    .banner img {
+        display: none;
+        /* replaced with display none */
+    }
+    .banner h1 {
+        text-align: center;
+        font-size: 10vw;
+        /* changed font size value */
+    }
+    #header {
+        margin-bottom: 4vw;
+        /* changed margin bottom value */
+    }
+    .stepDiv h2 {
+        font-size: 25px;
+        /* changed font size value */
+    }
+    #vehicleOutput,
+    #outputDiv {
+        width: 100%;
+    }
+    #vehicleOutput table td,
+    #outputDiv table td {
+        width: 50%;
+    }
+    #confirmOverlay p {
+        font-size: 25px;
+        /* height adjusted to expand overlay */
+    }
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title>Bookings</title>
+</head>
+
+<body>
+    <div id="header" class="banner">
+        <h1>- Ricky's Rides -</h1>
+        <img src="images/ricky_s_rides_white.jpg" alt="Image of Ricky's Rides Company logo, contains orange cartoon car and the text Ricky's Rides">
+    </div>
+    <div class="pageContent">
+        <h1>Bookings: </h1>
+        <div id="step1" class="stepDiv">
+            <h2 id="step1title">- Step 1: Pick Up -</h2>
+            <br>
+            <div class="pushedContent">
+                <label for="userDate">Pick up Date: </label><input id="userDate" type="date" required><br>
+                <label for="userDuration">Duration of Rental (Days): </label><input id="userDuration" type="number" min="1" max="14" placeholder="7" required><br>
+                <br>
+                <div class='alignCenter'>
+                    <button onclick="nextStep('1', '2')">Next Step</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="step2" class="stepDiv">
+            <h2 id="step2title">- Step 2: Select your Vehicle -</h2>
+            <br>
+
+            <div class='alignCenter'>
+                <div class="vehicleCard" data-name="Holden Trax" data-seats="5 x Seatbelts" data-body="Compact SUV" data-luggage="1 Large, 2 Small" data-engine="1.4 - 1.8 Litre" data-fuelusage="+/- 6.9 L / 100km" data-fueltype="Petrol" data-transmission="Automatic" data-price="41">
+                    <img src="images/holden_trax.jpg" alt="Image of Holden Trax car, a white compact SUV">
+                    <h2>Holden Trax</h2>
+                </div>
+
+                <div class="vehicleCard" data-name="Holden Captiva" data-seats="5 x Seatbelts" data-body="4 Door SUV" data-luggage="3 Large, 1 Small" data-engine="3 Litre" data-fuelusage="+/- 9.2 L / 100km" data-fueltype="Petrol" data-transmission="Automatic" data-price="52">
+                    <img src="images/holden_captiva.jpg" alt="Image of Holden Captiva car, a silver 4 door SUV">
+                    <h2>Holden Captiva</h2>
+                </div>
+                <div class="vehicleCard" data-name="Mazda 3" data-seats="5 x Seatbelts" data-body="5-Door Hatch or Wagon" data-luggage="2 Large, 1 Small" data-engine="1.6 - 2.0 Litre" data-fuelusage="+/- 6 L / 100km" data-fueltype="Petrol" data-transmission="Automatic"
+                    data-price="23">
+                    <img src="images/mazda_3.JPG" alt="Image of Mazda 3 car, a white 5 door hatch">
+                    <h2>Mazda 3</h2>
+                </div>
+                <div class="vehicleCard" data-name="Nissan Caravan" data-seats="10 x Seatbelts" data-body="Minivan" data-luggage="2 Large, 4 Small" data-engine="2.0 Litre" data-fuelusage="+/- 10 L / 100km" data-fueltype="Petrol" data-transmission="Automatic" data-price="89">
+                    <img src="images/nissan_caravan.jpg" alt="Image of Nissan Caravan car, a white Minivan">
+                    <h2>Nissan Caravan</h2>
+                </div>
+                <div class="vehicleCard" data-name="Nissan Tiida" data-seats="5 x Seatbelts" data-body="4 Door Sedan or 5 Door Hatch" data-luggage="1 Large, 2 Small" data-engine="1.3 - 2.0 Litre" data-fuelUsage="+/- 7 L / 100km" data-fueltype="Petrol" data-transmission="Automatic"
+                    data-price="18">
+                    <img src="images/nissan_tiida.jpg" alt="Image of Nissan Tiida car, a green 4 door hatch">
+                    <h2>Nissan Tiida</h2>
+                </div>
+                <div class="vehicleCard" data-name="Suzukki Swift" data-seats="5 x Seatbelts" data-body="5 Door Hatch" data-luggage="1 Large, 1 Small" data-engine="1.2 - 1.4 Litre" data-fuelusage="+/- 6 L / 100km" data-fueltype="Petrol" data-transmission="Automatic"
+                    data-price="18">
+                    <img src="images/suzuki_swift.jpg" alt="Image of Suzuki Swift car, a red 5 door hatch">
+                    <h2>Suzuki Swift</h2>
+                </div>
+                <div class="vehicleCard" data-name="Toyota Estima" data-seats="8 x Seatbelts" data-body="People Mover" data-luggage="3 Large, 2 Small" data-engine="2.4 Litre" data-fuelusage="+/- 9.51 L / 100km" data-fueltype="Petrol Unleaded 91" data-transmission="Automatic"
+                    data-price="62">
+                    <img src="images/toyota_estima.jpg" alt="Image of Toyota Estima car, a white people mover">
+                    <h2>Toyota Estima</h2>
+                </div>
+            </div>
+            <br><br>
+            <h2>- Vehicle Information: -</h2>
+            <br>
+            <div class="pushedContent">
+                <div id="vehicleOutput">Click a Car Above</div>
+                <br>
+                <div class='alignCenter'>
+                    <button onclick="nextStep('2', '1')">Previous Step</button>
+                    <button onclick="nextStep('2', '3')">Next Step</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="step3" class="stepDiv">
+            <h2 id="step3title">- Step 3: Additional Information -</h2>
+            <br>
+            <div class="pushedContent">
+                <div id="addCheckboxes">
+                    <label class="checkLabel">
+                    Snow Chains - $60
+                    <input class="addCheck" value="Snow Chains" type="checkbox" data-price="60">
+                    <span class="checkmark"></span>
+                </label>
+                    <label class="checkLabel">
+                    Roof Rack - $90
+                        <input class="addCheck" value="Roof Rack" type="checkbox" data-price="90">
+                        <span class="checkmark"></span>
+                </label>
+                    <label class="checkLabel">
+                    Bike Rack (Max. 3 bikes) - $120
+                    <input class="addCheck" value="Bike Rack" type="checkbox" data-price="120">
+                    <span class="checkmark"></span>
+                </label>
+                    <label class="checkLabel">
+                    GPS - $35
+                    <input class="addCheck" value="GPS" type="checkbox" data-price="35">
+                    <span class="checkmark"></span>
+                </label>
+                    <label class="checkLabel">
+                    Child Booster Seat (9kg - 36kg) - $50
+                    <input class="addCheck" value="Child Booster Seat" type="checkbox" data-price="50">
+                    <span class="checkmark"></span>
+                </label>
+                </div>
+                <br>
+                <label for="userFirstName">First Name: </label><input id="userFirstName" type="text" pattern="[a-zA-Z]{2,}" placeholder="John" required><br>
+                <label for="userLastName">Last Name: </label><input id="userLastName" type="text" pattern="[a-zA-Z' -]{2,}" placeholder="Doe" required><br>
+                <label for="userAge">Age: </label><input id="userAge" type="number" min="20" max="130" placeholder="21" required><br>
+                <label for="userCel">Cell Phone Number: </label><input id="userCel" type="tel" pattern="[+0-9 ]{9,13}" placeholder="+642101234567" required><br>
+                <label for="userEmail">Email Address: </label><input id="userEmail" type="email" placeholder="johndoe@gmail.com" required><br>
+                <label for="userComments">Addional Comments: </label><input id="userComments" type="text"><br>
+                <br>
+                <label class="checkLabel">
+                I accept the terms and conditions of Ricky's Rentals
+                <input id="termsAndConditions" type="checkbox" required>
+                    <span class="checkmark"></span>
+            </label>
+                <br>
+                <br>
+                <div class='alignCenter'>
+                    <button onclick="nextStep('3', '2')">Previous Step</button>
+                    <button onclick="nextStep('3', '4')">Next Step</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="step4" class="stepDiv">
+            <h2 id="step4title">- Step 4: Review Booking -</h2>
+            <br>
+            <div class="pushedContent">
+                <div id="outputDiv"></div>
+                <br>
+                <div class="alignCenter">
+                    <button onclick="nextStep('4', '3')">Previous Step</button>
+                    <button onclick="resetBooking()">Reset</button>
+                </div>
+                <div class="alignCenter">
+                    <button id="submitButton" onclick="submitBooking()" disabled>Confirm Booking</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="confirmOverlay">
+            <p>
+                Your booking has been confirmed.
+            </p>
+            <a href="javascript:void(0)" onclick=" document.getElementById('confirmOverlay').style.height = '0'">&times;</a>
+        </div>
+
+    </div>
+
+    <div id="footer" class="banner">
+        <p>2 Arthur Street, Dunedin</p>
+        <p>Ph: 03 4775277</p>
+        <p>rickeysrides@gmail.com</p>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAl88AwT96EgwpdcQQ49AbKj_FOGDBjzME",
+            authDomain: "ricky-s-rides-181ce.firebaseapp.com",
+            databaseURL: "https://ricky-s-rides-181ce.firebaseio.com",
+            projectId: "ricky-s-rides-181ce",
+            storageBucket: "ricky-s-rides-181ce.appspot.com",
+            messagingSenderId: "960930846424",
+            appId: "1:960930846424:web:de618a4be524ef3017a9ad"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="rickysrides.js"></script>
+</body>
+
+</html>
