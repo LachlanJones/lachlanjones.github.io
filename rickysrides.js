@@ -29,7 +29,7 @@ function updateInput() {
         additionalItemsCost: addCost,
         vehicleCost: Number(vehicleInfo.price),
         bookingFee: 50,
-        insuranceFee: 20,
+        insuranceFeePerDay: 20,
         cost: 0
     }
 
@@ -122,7 +122,7 @@ for (var i = 0; i < allInputs.length; i++) {
 }
 
 // Code used by navigation buttons to show/hide the current page
-nextStep('1', '1');
+document.getElementById('step1').classList.add('displayedDiv');
 
 function nextStep(currentNum, goToNum) {
     document.getElementById('step' + currentNum).classList.remove('displayedDiv');
